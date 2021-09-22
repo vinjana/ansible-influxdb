@@ -6,3 +6,6 @@
     group: "root"
     mode: "0644"
   notify: restart-influxdb
+
+- name: Flush handlers
+  meta: flush_handlers

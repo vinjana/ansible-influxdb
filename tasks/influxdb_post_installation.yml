@@ -1,0 +1,10 @@
+---
+- name: fix systemd file (https://github.com/influxdata/influxdb/issues/21967)
+  lineinfile:
+    line: Type=forking
+    state: absent
+    path: /etc/systemd/system/multi-user.target.wants/influxdb.service
+  notify: systemd-daemon-reload
+
+- name: Flush handlers
+  meta: flush_handlers
