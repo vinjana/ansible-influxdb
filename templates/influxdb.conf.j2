@@ -2,7 +2,7 @@
 {% import 'toml_parser.j2' as toml_parser %}
 
 [global]
-{% for option, value in influxdb_config_global.items() %}
+{% for option, value in internal_influxdb_config_global.items() %}
 {{ toml_parser.eval_value(option,value) }}
 {% endfor %}
 
@@ -67,7 +67,7 @@
 
 {% if influxdb_config_http is defined %}
 [http]
-{% for option, value in influxdb_config_http.items() %}
+{% for option, value in internal_influxdb_config_http.items() %}
 {{ toml_parser.eval_value(option,value) }}
 {% endfor %}
 {% endif %}

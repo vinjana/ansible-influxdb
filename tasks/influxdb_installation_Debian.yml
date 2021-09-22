@@ -23,7 +23,6 @@
     state: present
     update_cache: yes
   when: influxdb_manage_package
-  notify: start-influxdb
   loop:
     - influxdb
 

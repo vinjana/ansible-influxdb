@@ -9,3 +9,7 @@
   service:
     name: influxdb
     state: restarted
+
+- name: systemd-daemon-reload
+  systemd:
+    daemon_reload: yes
