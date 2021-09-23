@@ -48,6 +48,12 @@
     - install
     - manage-content
 
+- name: include influxdb database creation
+  include: "influxdb_manage_databases.yml"
+  tags:
+    - install
+    - manage-content
+
 - name: final influxdb configuration
   include: "influxdb_configuration.yml"
   vars:
@@ -55,9 +61,3 @@
     internal_influxdb_config_http: "{{ influxdb_config_http }}"
   tags:
     - config
-
-- name: include influxdb database creation
-  include: "influxdb_manage_databases.yml"
-  tags:
-    - install
-    - manage-content
